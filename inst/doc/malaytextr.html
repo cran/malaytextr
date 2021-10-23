@@ -159,12 +159,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="stem-malay-words" class="section level3">
 <h3>Stem Malay words</h3>
-<p>stem_malay() will find the root words in a dictionary, in which the malayrootwords data frame can be used, then it will remove “extra suffix”“,”prefix&quot; and lastly “suffix”</p>
+<p><code>stem_malay()</code> will find the root words in a dictionary, in which the <code>malayrootwords</code> data frame can be used, then it will remove “extra suffix”“,”prefix&quot; and lastly “suffix”</p>
 <p>To stem word “banyaknya”. It will return a data frame with the word “banyaknya” and the stemmed word “banyak”:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">stem_malay</span>(<span class="at">Word =</span> <span class="st">&quot;banyaknya&quot;</span>, <span class="at">dictionary =</span> malayrootwords)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;    Col Word root_word</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 banyaknya    banyak</span></span></code></pre></div>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">stem_malay</span>(<span class="at">word =</span> <span class="st">&quot;banyaknya&quot;</span>, <span class="at">dictionary =</span> malayrootwords)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; &#39;Root Word&#39; is now returned instead of &#39;root_word&#39;</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;    Col Word Root Word</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 banyaknya    banyak</span></span></code></pre></div>
 <p>To stem words in a data frame:</p>
 <ol style="list-style-type: decimal">
 <li>Specify the data frame</li>
@@ -174,14 +175,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">text =</span> <span class="fu">c</span>(<span class="st">&quot;banyaknya&quot;</span>,<span class="st">&quot;sangat&quot;</span>,<span class="st">&quot;terkedu&quot;</span>, <span class="st">&quot;pengetahuan&quot;</span>))</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="fu">stem_malay</span>(<span class="at">Word =</span> x, </span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="fu">stem_malay</span>(<span class="at">word =</span> x, </span>
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>          <span class="at">dictionary =</span> malayrootwords, </span>
 <span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>          <span class="at">col_feature1 =</span> <span class="st">&quot;text&quot;</span>)</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;      Col Word root_word</span></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1   banyaknya    banyak</span></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2      sangat    sangat</span></span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3     terkedu      kedu</span></span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4 pengetahuan      tahu</span></span></code></pre></div>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; &#39;Root Word&#39; is now returned instead of &#39;root_word&#39;</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;      Col Word Root Word</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1   banyaknya    banyak</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2      sangat    sangat</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3     terkedu      kedu</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4 pengetahuan      tahu</span></span></code></pre></div>
 </div>
 <div id="remove-urls" class="section level3">
 <h3>Remove URLs</h3>
@@ -191,6 +193,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="fu">remove_url</span>(x)</span>
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] &quot;test &quot;               &quot;another one  to try&quot;</span></span></code></pre></div>
+</div>
+<div id="malay-stop-words" class="section level3">
+<h3>Malay stop words</h3>
+<p>There is a data frame of Malay stop words:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(malaystopwords)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 6 x 1</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   stopwords</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   &lt;chr&gt;    </span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 ada      </span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2 sampai   </span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3 sana     </span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4 itu      </span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5 sangat   </span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 6 saya</span></span></code></pre></div>
 </div>
 </div>
 

@@ -14,14 +14,14 @@ head(malayrootwords)
 
 ## -----------------------------------------------------------------------------
 
-stem_malay(Word = "banyaknya", dictionary = malayrootwords)
+stem_malay(word = "banyaknya", dictionary = malayrootwords)
 
 
 ## -----------------------------------------------------------------------------
 
 x <- data.frame(text = c("banyaknya","sangat","terkedu", "pengetahuan"))
 
-stem_malay(Word = x, 
+stem_malay(word = x, 
           dictionary = malayrootwords, 
           col_feature1 = "text")
 
@@ -33,5 +33,10 @@ x <- c("test https://t.co/fkQC2dXwnc", "another one https://www.google.com/ to t
 
 remove_url(x)
 
+
+
+## -----------------------------------------------------------------------------
+
+head(malaystopwords)
 
 

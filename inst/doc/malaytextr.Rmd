@@ -33,13 +33,13 @@ head(malayrootwords)
 
 ### Stem Malay words
 
-stem_malay() will find the root words in a dictionary, in which the malayrootwords data frame can be used, then it will remove "extra suffix"", "prefix" and lastly "suffix"
+`stem_malay()` will find the root words in a dictionary, in which the `malayrootwords` data frame can be used, then it will remove "extra suffix"", "prefix" and lastly "suffix"
 
 To stem word "banyaknya". It will return a data frame with the word "banyaknya" and the stemmed word "banyak":
 
 ```{r}
 
-stem_malay(Word = "banyaknya", dictionary = malayrootwords)
+stem_malay(word = "banyaknya", dictionary = malayrootwords)
 
 ```
 
@@ -53,7 +53,7 @@ To stem words in a data frame:
 
 x <- data.frame(text = c("banyaknya","sangat","terkedu", "pengetahuan"))
 
-stem_malay(Word = x, 
+stem_malay(word = x, 
           dictionary = malayrootwords, 
           col_feature1 = "text")
 
@@ -73,3 +73,12 @@ remove_url(x)
 
 ```
 
+### Malay stop words
+
+There is a data frame of Malay stop words:
+
+```{r}
+
+head(malaystopwords)
+
+```
