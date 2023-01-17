@@ -1,4 +1,4 @@
-# malaytextr 0.1.2
+# malaytextr 0.1.3
 
 1. Added more Malay root words:
 
@@ -68,4 +68,44 @@ malaystopwords
  9 agak     
 10 jangan   
 # ... with 502 more rows
+```
+
+5. Sentiment words data frame:
+
+``` r
+sentiment_general
+# A tibble: 1,424 × 2
+   Word      Sentiment
+   <chr>     <chr>    
+ 1 berjaya   Positive 
+ 2 baik      Positive 
+ 3 terkenal  Positive 
+ 4 membantu  Positive 
+ 5 mudah     Positive 
+ 6 popular   Positive 
+ 7 moden     Positive 
+ 8 memenangi Positive 
+ 9 bebas     Positive 
+10 menarik   Positive 
+# … with 1,414 more rows
+```
+
+6. Normalized words data frame:
+
+``` r
+normalized
+# A tibble: 153 × 2
+   `Col Word` `Normalized Word`
+   <chr>      <chr>            
+ 1 ad         ada              
+ 2 ak         aku              
+ 3 akn        akan             
+ 4 ank        anak             
+ 5 ap         apa              
+ 6 awl        awal             
+ 7 bg         bagi             
+ 8 bkn        bukan            
+ 9 blm        belum            
+10 bnjr       banjir           
+# … with 143 more rows
 ```

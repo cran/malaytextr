@@ -1,21 +1,25 @@
 # malaytextr
 
-Bahasa Malaysia NLP Package for R
+malaytextr: An R package to process Malay text data. It offers a number of functions/datasets for analyzing and working with text data in the Malay language.
 
 
-<!-- badges: start -->
+<!-- badges: start --> 
+[![CRAN status](https://www.r-pkg.org/badges/version/malaytextr)](https://CRAN.R-project.org/package=malaytextr) [![Lifecycle: stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable) [![Codecov test coverage](https://codecov.io/gh/zahiernasrudin/malaytextr/branch/master/graph/badge.svg)](https://app.codecov.io/gh/zahiernasrudin/malaytextr/branch/master) [![](https://cranlogs.r-pkg.org/badges/grand-total/malaytextr)](https://cran.r-project.org/package=malaytextr) 
 
-[![CRAN status](https://www.r-pkg.org/badges/version/malaytextr)](https://CRAN.R-project.org/package=malaytextr) [![Lifecycle: stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable) [![Codecov test coverage](https://codecov.io/gh/zahiernasrudin/malaytextr/branch/master/graph/badge.svg)](https://app.codecov.io/gh/zahiernasrudin/malaytextr/branch/master) [![](https://cranlogs.r-pkg.org/badges/grand-total/malaytextr)](https://cran.r-project.org/package=malaytextr) <!-- badges: end -->
-=======
+<!-- badges: end -->
+
+
 
 
 
 ## Features
 
 -   Malayrootwords dictionary
--   Malaystopwords dictionary (Development version)
+-   Malaystopwords dictionary
 -   Stemming words
 -   Remove URLs (New function: 13 August 2021)
+-   Sentiment words (Development version)
+-   Normalized words (Development version) 
 
 ## Installation
 
@@ -63,7 +67,7 @@ malayrootwords
 
 To stem word "banyaknya". It will return a data frame with the word "banyaknya" and the stemmed word "banyak":
 
-**Note: In the development version, 'Root Word' is now returned instead of 'root_word'**
+**Note: 'Root Word' is now returned instead of 'root_word'**
 
 ``` r
 stem_malay(word = "banyaknya", dictionary = malayrootwords)
@@ -108,7 +112,7 @@ remove_url(x)
 
 ### Malay stop words
 
-In the development version, there is a data frame of Malay stop words:
+There is a data frame of Malay stop words:
 
 ``` r
 malaystopwords
@@ -126,6 +130,53 @@ malaystopwords
  9 agak     
 10 jangan   
 # ... with 502 more rows
+```
+
+### Sentiment words (Development version)
+
+This lexicon includes words that have been labelled as positive or negative:
+
+``` r
+sentiment_general
+# A tibble: 1,424 × 2
+   Word      Sentiment
+   <chr>     <chr>    
+ 1 aduan     Negative 
+ 2 agresif   Negative 
+ 3 amaran    Negative 
+ 4 anarki    Negative 
+ 5 ancaman   Negative 
+ 6 aneh      Negative 
+ 7 antagonis Negative 
+ 8 azab      Negative 
+ 9 babi      Negative 
+10 bahaya    Negative 
+# … with 1,414 more rows
+```
+
+
+### Normalized words (Development version)
+
+This dataset is a development version that aims to provide a standardized version of Malay words. It is designed to standardize words that have multiple variations/spellings
+
+```r
+
+normalized
+# A tibble: 153 × 2
+   `Col Word` `Normalized Word`
+   <chr>      <chr>            
+ 1 ad         ada              
+ 2 ak         aku              
+ 3 akn        akan             
+ 4 ank        anak             
+ 5 ap         apa              
+ 6 awl        awal             
+ 7 bg         bagi             
+ 8 bkn        bukan            
+ 9 blm        belum            
+10 bnjr       banjir           
+# … with 143 more rows
+
 ```
 
 

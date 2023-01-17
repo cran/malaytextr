@@ -40,3 +40,8 @@ remove_url(x)
 head(malaystopwords)
 
 
+## -----------------------------------------------------------------------------
+
+head(sentiment_general)
+
+
